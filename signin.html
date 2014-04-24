@@ -65,7 +65,7 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
-				var myUrl = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
         $('#storage').hide();
         $('#storage').load(myUrl);

@@ -65,8 +65,29 @@
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
 				var myUrl = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
-				
-				$.ajax({
+
+        getUserSuccess(myUrl);
+
+        function getUserSuccess(url)
+        {
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", url, true);
+              xhr.onreadystatechange = function( {
+                    if (xhr.readyState == 4) {
+                          return parseUserSuccess(xhr.responseText);
+                    }
+              }
+        }
+        function parseUserSuccess(html)
+        {
+              if (html.indexOf("-1") !== -1) { 
+              window.location.replace("./portal.html"); }
+              else { 
+              window.location.replace("./signin.html"); }
+
+        }
+
+				/*$.ajax({
           url: myUrl,
 					success: function(data) {
 						if (data == '1') {
@@ -79,7 +100,7 @@
           error: function(xhr, textStatus, errorThrown) {
             alert("Failed: " + textStatus + " : " + errorThrown);
           }
-				});
+				});*/
 			});
 		});
 	</script>

@@ -66,8 +66,7 @@
 				var pwd = $('#pwd-box').val();
 				
 				$.ajax({
-					url: "crowdsourceua.herokuapp.com/verifyUser.php",
-					data: { email: eml, pass: pwd },
+					url: "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "",
 					dataType: "json",
 					success: function(data) {
 						if (data['status']) {

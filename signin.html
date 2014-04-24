@@ -64,10 +64,10 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
-				var url = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+				var myUrl = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 				
 				$.ajax({
-          url: url,
+          url: myUrl,
 					success: function(data) {
 						if (data == '1') {
 							window.location.replace("./portal.html");

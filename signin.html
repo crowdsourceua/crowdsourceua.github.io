@@ -68,7 +68,11 @@
 				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
         $('#storage').hide();
-        $('#storage').load("www.google.com");
+        $('#storage').load("www.google.com", function(responseText, textStatus, XMLHttpRequest) {
+          alert(responseText);
+          alert(textStatus);
+          alert(XMLHttpRequest);
+          });
         var data = $('#storage').html();
         if (data == '1') {
           window.location.replace("./portal.html");

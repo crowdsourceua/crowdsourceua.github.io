@@ -47,6 +47,7 @@
       </form>
 
     </div> <!-- /container -->
+    <div id='storage'></div>
 
 
     <!-- Bootstrap core JavaScript
@@ -66,26 +67,13 @@
 				var pwd = $('#pwd-box').val();
 				var myUrl = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
-        getUserSuccess(myUrl);
-
-        function getUserSuccess(url)
-        {
-              var xhr = new XMLHttpRequest();
-              xhr.open("GET", url, true);
-              xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4) {
-                          return parseUserSuccess(xhr.responseText);
-                    }
-              }
-              xhr.send();
+        $('#storage').hide();
+        $('#storage').load(myUrl);
+        if ($('#storage').html() == '1') {
+          window.location.replace("./portal.html");
         }
-        function parseUserSuccess(html)
-        {
-              if (html.indexOf("1") !== -1) { 
-              window.location.replace("./portal.html"); }
-              else { 
-              window.location.replace("./signin.html"); }
-
+        if ($('#storage').html() == '0') {
+          window.location.replace("./signin.html");
         }
 
 				/*$.ajax({

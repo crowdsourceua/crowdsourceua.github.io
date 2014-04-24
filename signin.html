@@ -58,6 +58,7 @@
     <script src="./js/docs.min.js"></script>
     <script src="./messenger/js/messenger.min.js"></script>
     <script src="./messenger/js/messenger-theme-future.js"></script>
+    <script src="./js/jquery.xdomainajax.js.js"></script>
 	
 	<!-- Javascript for checking validity of username and password using AJAX call -->
 	<script type='text/javascript'>
@@ -67,21 +68,7 @@
 				var pwd = $('#pwd-box').val();
 				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
-        $('#storage').hide();
-        $('#storage').load("www.google.com", function(responseText, textStatus, XMLHttpRequest) {
-          alert(responseText);
-          alert(textStatus);
-          alert(XMLHttpRequest);
-          });
-        var data = $('#storage').html();
-        if (data == '1') {
-          window.location.replace("./portal.html");
-        }
-        if (data == '0') {
-          window.location.replace("./signin.html");
-        }
-
-				/*$.ajax({
+				$.ajax({
           url: myUrl,
 					success: function(data) {
 						if (data == '1') {
@@ -94,7 +81,7 @@
           error: function(xhr, textStatus, errorThrown) {
             alert("Failed: " + textStatus + " : " + errorThrown);
           }
-				});*/
+				});
 			});
 		});
 	</script>

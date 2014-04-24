@@ -70,7 +70,7 @@
 					data: { email: eml, pass: pwd },
 					dataType: "json",
 					complete: function(data) {
-						if (data) {
+						if (data['status']) {
 							window.location.href = "./portal.html";
 						}
 						else {

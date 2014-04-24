@@ -62,8 +62,8 @@
 	<script type='text/javascript'>
 		$(document).ready(function() {
 			$('.form-signin').on('submit', function() {				
-				var eml = $('#email-box').value();
-				var pwd = $('#pwd-box').value();
+				var eml = $('#email-box').val();
+				var pwd = $('#pwd-box').val();
 				
 				$.ajax({
 					url: "crowdsource.herokuapp.com/verifyUser.php",

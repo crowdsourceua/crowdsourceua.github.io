@@ -64,9 +64,10 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
+				var url = "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 				
 				$.ajax({
-					url: "crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "",
+          url: url,
 					dataType: "json",
 					success: function(data) {
 						if (data['status']) {

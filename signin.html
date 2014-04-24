@@ -69,7 +69,7 @@
 					url: "crowdsource.herokuapp.com/verifyUser.php",
 					data: { email: eml, pass: pwd },
 					dataType: "json",
-					complete: function(data) {
+					success: function(data) {
 						if (data['status']) {
 							window.location.replace("./portal.html");
 						}

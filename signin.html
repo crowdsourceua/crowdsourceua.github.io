@@ -69,10 +69,11 @@
 
         $('#storage').hide();
         $('#storage').load(myUrl);
-        if ($('#storage').html() == '1') {
+        var data = $('#storage').innerHtml()
+        if (data == '1') {
           window.location.replace("./portal.html");
         }
-        if ($('#storage').html() == '0') {
+        if (data == '0') {
           window.location.replace("./signin.html");
         }
 

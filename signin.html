@@ -68,12 +68,12 @@
 				
 				$.ajax({
           url: url,
-					dataType: "json",
+					dataType: "text",
 					success: function(data) {
-						if (data) {
+						if (data == '1') {
 							window.location.replace("./portal.html");
 						}
-						else {
+						if (data == '0') {
 							window.location.replace("./signin.html");
 						}
 					}

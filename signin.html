@@ -67,8 +67,6 @@
 				var pwd = $('#pwd-box').val();
 				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
-        document.domain = "http://crowdsourceua.herokuapp.com";
-        
         $.ajax({
           url: myUrl,
 					success: function(data) {

@@ -71,10 +71,10 @@
 					dataType: "json",
 					complete: function(data) {
 						if (data['status']) {
-							window.location.replace = "./portal.html";
+							window.location.replace("./portal.html");
 						}
 						else {
-							window.location.replace = "./signin.html";
+							window.location.replace("./signin.html");
 						}
 					}
 				});
